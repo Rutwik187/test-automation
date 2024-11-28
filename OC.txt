@@ -1,0 +1,108 @@
+
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:t="http://farelogix.com/flx/t" >
+    <SOAP-ENV:Header>
+        <t:TransactionControl>
+            <tc>
+                <app version="5.0.0" language="en-AU">SOAP</app>
+                <iden u="Farelogix" p="TEMP02" pseudocity="{pseudocity}" agt="NGAYAKE" agtpwd="{agtpwd}"
+                      agy="{agy}"/>
+                <trace>haxmluser</trace>
+                <script engine="FLXDM" name="haa-dispatch.flxdm"/>
+            </tc>
+        </t:TransactionControl>
+    </SOAP-ENV:Header>
+    <SOAP-ENV:Body>
+        <ns1:XXTransaction>
+            <REQ>
+                <OrderCreateRQ Version="17.2" TransactionIdentifier="5b240834d7e511eda46d84fdd1ef000f">
+                    <Document id="document"/>
+                    <Party>
+                        <Sender>
+                            <TravelAgencySender>
+                                <PseudoCity>{pseudocity}</PseudoCity>
+                                <AgencyID>{agy}</AgencyID>
+                            </TravelAgencySender>
+                        </Sender>
+                    </Party>
+                    <Query>
+                        <Order>
+                            <!--Flight Offer-->
+                            <Offer OfferID="{OfferID}" Owner="HAA" ResponseID="{ResponseID}">
+                                <OfferItem OfferItemID="{OfferItemID}">
+                                    <PassengerRefs>T1</PassengerRefs>
+                                </OfferItem>
+                            </Offer>
+                        </Order>
+                        <Payments>
+                            <Payment>
+                                <Type>CC</Type>
+                                <Method>
+                                    <PaymentCard>
+                                        <CardCode>VI</CardCode>
+                                        <CardNumber>4434260000000008</CardNumber>
+                                        <SeriesCode>123</SeriesCode>
+                                        <CardHolderName>Chetan Inamdar</CardHolderName>
+                                        <CardHolderBillingAddress>
+                                            <Street>1234 Elm Street</Street>
+                                            <CityName>Springfield</CityName>
+                                            <StateProv>TX</StateProv>
+                                            <PostalCode>76131</PostalCode>
+                                            <CountryCode>US</CountryCode>
+                                        </CardHolderBillingAddress>
+                                        <EffectiveExpireDate>
+                                            <Expiration>0139</Expiration>
+                                        </EffectiveExpireDate>
+                                    </PaymentCard>
+                                </Method>
+                                <Amount Code="USD">78440</Amount>
+                                <!--<PaymentTrxChannelCode>POS</PaymentTrxChannelCode>-->
+                            </Payment>
+                        </Payments>
+                        <DataLists>
+                            <PassengerList>
+                                <Passenger PassengerID="T1">
+                                    <PTC>ADT</PTC>
+                                    <Individual>
+                                        <Birthdate>1988-05-24</Birthdate>
+                                        <Gender>Male</Gender>
+                                        <GivenName>Narayan</GivenName>
+                                        <Surname>Gayake</Surname>
+                                    </Individual>
+                                    <ContactInfoRef>CI1</ContactInfoRef>
+                                    <Language>
+                                        <LanguageCode>EN</LanguageCode>
+                                    </Language>
+                                </Passenger>
+                            </PassengerList>
+                            <ContactList>
+                                <ContactInformation ContactID="CI1">
+                                    <PostalAddress>
+                                        <Label>AddressAtDestination</Label>
+                                        <Street>4918 Nuzum Court</Street>
+                                        <PostalCode>14068</PostalCode>
+                                        <CityName>Getzville</CityName>
+                                        <CountrySubdivisionName>New York</CountrySubdivisionName>
+                                        <CountryCode>US</CountryCode>
+                                    </PostalAddress>
+                                    <ContactProvided>
+                                        <Phone>
+                                            <Label>Operational</Label>
+                                            <CountryDialingCode>1</CountryDialingCode>
+                                            <AreaCode>808</AreaCode>
+                                            <PhoneNumber>7814118</PhoneNumber>
+                                        </Phone>
+                                    </ContactProvided>
+                                    <ContactProvided>
+                                        <EmailAddress>
+                                            <Label>Operational</Label>
+                                            <EmailAddressValue>narayan.gayake-v@hawaiianair.com</EmailAddressValue>
+                                        </EmailAddress>
+                                    </ContactProvided>
+                                </ContactInformation>
+                            </ContactList>
+                        </DataLists>
+                    </Query>
+                </OrderCreateRQ>
+            </REQ>
+        </ns1:XXTransaction>
+    </SOAP-ENV:Body>

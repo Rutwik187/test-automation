@@ -1,0 +1,7 @@
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" xmlns:xsd="http://www.w3.org/1999/XMLSchema/" xmlns:xsi="http://www.w3.org/1999/XMLSchema/instance/"><SOAP-ENV:Header><t:Transaction xmlns:t="xxs"><tc><pid>FLX DMServer TC1 (8800/3070) STG 0a43</pid><tid>15869EFE-877BF020</tid><dt>2024-11-28T06:17:56</dt></tc></t:Transaction></SOAP-ENV:Header><SOAP-ENV:Body><ns1:XXTransactionResponse xmlns:ns1="xxs"><RSP><OrderViewRS Version="17.2" TransactionIdentifier="5b240834d7e511eda46d84fdd1ef000f">
+	<Document></Document>
+	<Errors>
+		<Error Type="DME" ShortText="230000002" Code="325">Invalid or Expired Offer X91D49A8-8D39-4813-A026-74</Error>
+	</Errors>
+</OrderViewRS>
+</RSP></ns1:XXTransactionResponse></SOAP-ENV:Body></SOAP-ENV:Envelope>

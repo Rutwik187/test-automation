@@ -1,0 +1,51 @@
+
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:t="http://farelogix.com/flx/t" >
+    <SOAP-ENV:Header>
+        <t:TransactionControl>
+            <tc>
+                <app version="5.0.0" language="en-AU">SOAP</app>
+                <iden u="Farelogix" p="TEMP02" pseudocity="{pseudocity}" agt="NGAYAKE" agtpwd="{agtpwd}"
+                      agy="{agy}"/>
+                <trace>haxmluser</trace>
+                <script engine="FLXDM" name="haa-dispatch.flxdm"/>
+            </tc>
+        </t:TransactionControl>
+    </SOAP-ENV:Header>
+    <SOAP-ENV:Body>
+        <ns1:XXTransaction>
+            <REQ>
+                <AirShoppingRQ Version="17.2" TransactionIdentifier="f5983548cf4f11edbe7e84fdd1ef000f">
+                    <Document id="document"/>
+                    <Party>
+                        <Sender>
+                            <TravelAgencySender>
+                                <PseudoCity>{pseudocity}</PseudoCity>
+                                <AgencyID>{agy}</AgencyID>
+                            </TravelAgencySender>
+                        </Sender>
+                    </Party>
+                    <CoreQuery>
+                        <OriginDestinations>
+                            <OriginDestination OriginDestinationKey="OD1">
+                                <Departure>
+                                    <AirportCode>{origin}</AirportCode>
+                                    <Date>{departure_date}</Date>
+                                </Departure>
+                                <Arrival>
+                                    <AirportCode>{destination}</AirportCode>
+                                </Arrival>
+                            </OriginDestination>
+                        </OriginDestinations>
+                    </CoreQuery>
+                    <DataLists>
+                        <PassengerList>
+                            <Passenger PassengerID="T1">
+                                <PTC>ADT</PTC>
+                            </Passenger>
+                            
+                        </PassengerList>
+                    </DataLists>
+                </AirShoppingRQ>
+            </REQ>
+        </ns1:XXTransaction>
+    </SOAP-ENV:Body>

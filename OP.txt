@@ -1,0 +1,61 @@
+
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:t="http://farelogix.com/flx/t" >
+    <SOAP-ENV:Header>
+        <t:TransactionControl>
+            <tc>
+                <app version="5.0.0" language="en-AU">SOAP</app>
+                <iden u="Farelogix" p="TEMP02" pseudocity="{pseudocity}" agt="NGAYAKE" agtpwd="{agtpwd}"
+                      agy="{agy}"/>
+                <trace>haxmluser</trace>
+                <script engine="FLXDM" name="haa-dispatch.flxdm"/>
+            </tc>
+        </t:TransactionControl>
+    </SOAP-ENV:Header>
+    <SOAP-ENV:Body>
+        <ns1:XXTransaction>
+            <REQ>
+                <OfferPriceRQ Version="17.2" TransactionIdentifier="3a4a90d7840711ee8a8284fdd1ef000f">
+                    <Document id="document"/>
+                    <Party>
+                        <Sender>
+                            <TravelAgencySender>
+                                <PseudoCity>{pseudocity}</PseudoCity>
+                                <AgencyID>{agy}</AgencyID>
+                            </TravelAgencySender>
+                        </Sender>
+                    </Party>
+                    <Query>
+                        <Offer OfferID="{OfferID}" Owner="HAA" ResponseID="{ResponseID}">
+                            <OfferItem OfferItemID="{OfferItemID}">
+                                <PassengerRefs>T1</PassengerRefs>
+                            </OfferItem>
+                        </Offer>
+                    </Query>
+                    <Preference>
+                        <FarePreferences>
+                            <Types>
+                                <Type>749</Type>
+                                <Type>70J</Type>
+                            </Types>
+                            <Exclusion>
+                                <NoMinStayInd>false</NoMinStayInd>
+                                <NoMaxStayInd>false</NoMaxStayInd>
+                                <NoAdvPurchaseInd>false</NoAdvPurchaseInd>
+                                <NoPenaltyInd>false</NoPenaltyInd>
+                            </Exclusion>
+                        </FarePreferences>
+                        <PricingMethodPreference>
+                            <BestPricingOption>N</BestPricingOption>
+                        </PricingMethodPreference>
+                    </Preference>
+                    <DataLists>
+                        <PassengerList>
+                            <Passenger PassengerID="T1">
+                                <PTC>ADT</PTC>
+                            </Passenger>
+                        </PassengerList>
+                    </DataLists>
+                </OfferPriceRQ>
+            </REQ>
+        </ns1:XXTransaction>
+    </SOAP-ENV:Body>
