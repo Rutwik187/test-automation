@@ -121,48 +121,144 @@ def main():
         print("No offers found for the selected price class.")
         return
     
-    # Step 6: Process each offer
-    for offer in offers:
-        offer_id = offer.get('OfferID')
-        offer_item = offer.find('.//OfferItem')
+    # Step 6: Process offers and make OfferPrice call for the first offer
+    if offers:
+        # Get the first offer
+        first_offer = offers[0]
+        offer_id = first_offer.get('OfferID')
+        offer_item = first_offer.find('.//OfferItem')
+        
+        # Get ResponseID from AirShoppingResponse
+        response_id = root.find('.//ShoppingResponseID/ResponseID')
+        response_id_text = response_id.text if response_id is not None else 'N/A'
+        
         if offer_item is not None:
             offer_item_id = offer_item.get('OfferItemID')
             
-            # Get price information
-            total_price = offer.find('.//TotalPrice/DetailCurrencyPrice/Total')
+            # Get price information and display AirShopping details
+            total_price = first_offer.find('.//TotalPrice/DetailCurrencyPrice/Total')
             if total_price is not None:
                 price = total_price.text
                 currency = total_price.get('Code')
-                print(f"\n=== Offer Details ===")
+                print(f"\n=== AirShopping Offer Details ===")
+                print(f"ResponseID: {response_id_text}")
                 print(f"OfferID: {offer_id}")
                 print(f"OfferItemID: {offer_item_id}")
                 print(f"Total Price: {price} {currency}")
             
-            # Process OfferPrice request
+            # Make OfferPrice API call
+            print("\nMaking OfferPrice API call...")
             offerprice_request = api.format_xml(
                 api.offerprice_template,
-                pseudocity, agtpwd, agy,
-                origin, destination, departure_date,
-                ResponseID=root.find('.//ResponseID').text,
+                pseudocity=pseudocity,
+                agtpwd=agtpwd,
+                agy=agy,
+                origin=origin,
+                destination=destination,
+                departure_date=departure_date,
+                ResponseID=response_id_text,
                 OfferID=offer_id,
                 OfferItemID=offer_item_id
             )
             
-            offerprice_response = api.send_soap_request(offerprice_request)
-            api.save_response("OfferPriceResponse.xml", offerprice_response.text)
-            
-            # Process OrderCreate if needed
-            ordercreate_request = api.format_xml(
-                api.ordercreate_template,
-                pseudocity, agtpwd, agy,
-                origin, destination, departure_date,
-                ResponseID=root.find('.//ResponseID').text,
-                OfferID=offer_id,
-                OfferItemID=offer_item_id
-            )
-            
-            ordercreate_response = api.send_soap_request(ordercreate_request)
-            api.save_response("OrderCreateResponse.xml", ordercreate_response.text)
+            try:
+                offerprice_response = api.send_soap_request(offerprice_request)
+                api.save_response("OfferPriceResponse.xml", offerprice_response.text)
+                print("OfferPrice request successful! Response saved to OfferPriceResponse.xml")
+                
+                # Parse OfferPrice response
+                op_root = ET.fromstring(offerprice_response.text)
+                
+                # Extract IDs from OfferPrice response
+                op_response_id = op_root.find('.//ShoppingResponseID/ResponseID')
+                op_offer = op_root.find('.//PricedOffer')
+                op_offer_item = op_root.find('.//OfferItem')
+                
+                # Store the values for OrderCreate
+                response_id = op_response_id.text if op_response_id is not None else None
+                offer_id = op_offer.get('OfferID') if op_offer is not None else None
+                offer_item_id = op_offer_item.get('OfferItemID') if op_offer_item is not None else None
+                
+                print(f"\n=== OfferPrice Response Details ===")
+                print(f"ResponseID: {response_id}")
+                print(f"OfferID: {offer_id}")
+                print(f"OfferItemID: {offer_item_id}")
+                
+                # Proceed with OrderCreate if we have all required IDs
+                if response_id and offer_id and offer_item_id:
+                    print("\nMaking OrderCreate API call...")
+                    
+                    # Format OrderCreate request with values from OfferPrice
+                    ordercreate_request = api.format_xml(
+                        api.ordercreate_template,
+                        pseudocity=pseudocity,
+                        agtpwd=agtpwd,
+                        agy=agy,
+                        origin=origin,
+                        destination=destination,
+                        departure_date=departure_date,
+                        ResponseID=response_id,
+                        OfferID=offer_id,
+                        OfferItemID=offer_item_id
+                    )
+                    
+                    # Send OrderCreate request
+                    ordercreate_response = api.send_soap_request(ordercreate_request)
+                    api.save_response("OrderCreateResponse.xml", ordercreate_response.text)
+                    print("OrderCreate request successful! Response saved to OrderCreateResponse.xml")
+                    
+                    # Parse OrderCreate response
+                    oc_root = ET.fromstring(ordercreate_response.text)
+                    
+                    print("\n=== OrderCreate Response Details ===")
+                    
+                    # Get OrderID
+                    order = oc_root.find('.//Order')
+                    if order is not None:
+                        order_id = order.get('OrderID')
+                        print(f"OrderID: {order_id}")  # HA173HN5TS5A2
+                    
+                    # Get BookingReferences
+                    booking_refs = oc_root.findall('.//BookingReference')
+                    if booking_refs:
+                        print("\nBooking References:")
+                        for ref in booking_refs:
+                            ref_id = ref.find('ID')
+                            airline = ref.find('AirlineID')
+                            other = ref.find('OtherID')
+                            if ref_id is not None:
+                                if airline is not None:
+                                    print(f"Airline ({airline.text}) Reference: {ref_id.text}")  # HAA: 3TEHVK
+                                elif other is not None:
+                                    print(f"Other ({other.text}) Reference: {ref_id.text}")      # F1: BN5TS5
+                    
+                    # Get TicketDocNbr
+                    ticket_doc = oc_root.find('.//TicketDocument/TicketDocNbr')
+                    if ticket_doc is not None:
+                        print(f"\nTicket Document Number: {ticket_doc.text}")  # 17357558930854
+                    
+                    # Get OrderItemIDs from both Payment and OrderItem sections
+                    print("\nOrder Items:")
+                    
+                    # From Payment section
+                    payment_order_item = oc_root.find('.//Payment/OrderItemID')
+                    if payment_order_item is not None:
+                        print(f"Payment OrderItemID: {payment_order_item.text}")
+                    
+                    # From OrderItems section
+                    order_items = oc_root.findall('.//OrderItem')
+                    if order_items:
+                        for item in order_items:
+                            item_id = item.get('OrderItemID')
+                            print(f"OrderItem OrderItemID: {item_id}")
+                    
+                else:
+                    print("Missing required IDs for OrderCreate request")
+                    
+            except Exception as e:
+                print(f"Error in API processing: {e}")
+    else:
+        print("No offers found to process.")
 
 if __name__ == '__main__':
     main()

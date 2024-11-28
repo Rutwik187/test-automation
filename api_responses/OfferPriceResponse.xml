@@ -1,6 +1,562 @@
-<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" xmlns:xsd="http://www.w3.org/1999/XMLSchema/" xmlns:xsi="http://www.w3.org/1999/XMLSchema/instance/"><SOAP-ENV:Header><t:Transaction xmlns:t="xxs"><tc><pid>FLX DMServer TC1 (8800/3070) STG 0a43</pid><tid>15869BE1-25A0F4D0</tid><dt>2024-11-28T06:17:55</dt></tc></t:Transaction></SOAP-ENV:Header><SOAP-ENV:Body><ns1:XXTransactionResponse xmlns:ns1="xxs"><RSP><OfferPriceRS TransactionIdentifier="3a4a90d7840711ee8a8284fdd1ef000f" Version="17.2">
-	<Errors>
-		<Error Type="DME" ShortText="230000002" Code="325">Invalid or Expired Offer X91D49A8-8D39-4813-A026-74</Error>
-	</Errors>
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" xmlns:xsd="http://www.w3.org/1999/XMLSchema/" xmlns:xsi="http://www.w3.org/1999/XMLSchema/instance/"><SOAP-ENV:Header><t:Transaction xmlns:t="xxs"><tc><pid>FLX DMServer TC1 (8800/3070) STG 0a43</pid><tid>1616CCF7-5825F570</tid><dt>2024-11-28T08:55:25</dt></tc></t:Transaction></SOAP-ENV:Header><SOAP-ENV:Body><ns1:XXTransactionResponse xmlns:ns1="xxs"><RSP><OfferPriceRS Version="17.2" TransactionIdentifier="3a4a90d7840711ee8a8284fdd1ef000f">
+	<Document id="document"></Document>
+	<Success></Success>
+	<ShoppingResponseID>
+		<Owner>HAA</Owner>
+		<ResponseID>P9A8D7945-EB31-426C-8391</ResponseID>
+	</ShoppingResponseID>
+	<PricedOffer OfferID="P9A8D7945-EB31-426C-8391f13dpoteginz5-1" Owner="HAA">
+		<Parameters>
+			<TotalItemQuantity>1</TotalItemQuantity>
+			<PTC_Priced refs="P9A8D7945-EB31-426C-8391f13dpoteginz5-1-1">
+				<Requested Quantity="1">ADT</Requested>
+				<Priced Quantity="1">ADT</Priced>
+			</PTC_Priced>
+		</Parameters>
+		<ValidatingCarrier>HA</ValidatingCarrier>
+		<TimeLimits>
+			<OfferExpiration DateTime="2024-11-28T14:15:25Z"></OfferExpiration>
+			<Payment DateTime="2024-11-29T03:55:00"></Payment>
+			<OtherLimits>
+				<OtherLimit>
+					<PriceGuaranteeTimeLimit></PriceGuaranteeTimeLimit>
+					<TicketByTimeLimit>
+						<TicketBy>2024-11-29T03:55:00</TicketBy>
+					</TicketByTimeLimit>
+				</OtherLimit>
+			</OtherLimits>
+		</TimeLimits>
+		<TotalPrice>
+			<DetailCurrencyPrice>
+				<Total Code="USD">71820</Total>
+			</DetailCurrencyPrice>
+		</TotalPrice>
+		<BagDisclosureRefs>Pbdc9za08pebzlcv8</BagDisclosureRefs>
+		<Match>
+			<Application>Journey</Application>
+			<MatchResult>Full</MatchResult>
+		</Match>
+		<FlightsOverview>
+			<FlightRef ODRef="OD1" PriceClassRef="Ppc3khyq40tvqw7l">Pflt6mp35u7yx9als</FlightRef>
+		</FlightsOverview>
+		<OfferItem OfferItemID="P9A8D7945-EB31-426C-8391f13dpoteginz5-1-1" MandatoryInd="true">
+			<TotalPriceDetail>
+				<TotalAmount>
+					<DetailCurrencyPrice>
+						<Total Code="USD">71820</Total>
+					</DetailCurrencyPrice>
+				</TotalAmount>
+			</TotalPriceDetail>
+			<Service ServiceID="Psvcxgdmcbv7azao8">
+				<PassengerRefs>T1</PassengerRefs>
+				<FlightRefs>Pflt6mp35u7yx9als</FlightRefs>
+			</Service>
+			<FareDetail>
+				<FareIndicatorCode>0</FareIndicatorCode>
+				<PassengerRefs>T1</PassengerRefs>
+				<Price>
+					<BaseAmount Code="USD">68542</BaseAmount>
+					<Taxes>
+						<Total Code="USD">3278</Total>
+						<Breakdown>
+							<Tax CollectionInd="true">
+								<Amount Code="USD">560</Amount>
+								<Nation>US</Nation>
+								<TaxCode>AY</TaxCode>
+								<LocalAmount Code="USD">560</LocalAmount>
+								<Description>PASSENGER CIVIL AVIATION SECURITY SERVICE FEE</Description>
+							</Tax>
+							<Tax CollectionInd="true">
+								<Amount Code="USD">658</Amount>
+								<Nation>US</Nation>
+								<TaxCode>US</TaxCode>
+								<Description>TRANSPORTATION TAX DOMESTIC NOT WHOLLY WITHIN THE US</Description>
+							</Tax>
+							<Tax CollectionInd="true">
+								<Amount Code="USD">1110</Amount>
+								<Nation>US</Nation>
+								<TaxCode>US</TaxCode>
+								<LocalAmount Code="USD">1110</LocalAmount>
+								<Description>TRANSPORTATION TAX INTERNATIONAL DEPARTURE</Description>
+							</Tax>
+							<Tax CollectionInd="true">
+								<Amount Code="USD">450</Amount>
+								<Nation>US</Nation>
+								<TaxCode>XF</TaxCode>
+								<CollectionPoint>
+									<CurrCode NumberOfDecimals="2">USD</CurrCode>
+									<AirportAmount>450</AirportAmount>
+									<AirportCode>LAS</AirportCode>
+								</CollectionPoint>
+								<LocalAmount Code="USD">450</LocalAmount>
+								<Description>US PASSENGER FACILITY CHARGE</Description>
+							</Tax>
+							<Tax CollectionInd="true">
+								<Amount Code="USD">500</Amount>
+								<Nation>US</Nation>
+								<TaxCode>ZP</TaxCode>
+								<CollectionPoint>
+									<CurrCode NumberOfDecimals="2">USD</CurrCode>
+									<AirportAmount>500</AirportAmount>
+									<AirportCode>LAS</AirportCode>
+								</CollectionPoint>
+								<LocalAmount Code="USD">500</LocalAmount>
+								<Description>FLIGHT SEGMENT TAX DOMESTIC</Description>
+							</Tax>
+						</Breakdown>
+					</Taxes>
+				</Price>
+				<FareComponent>
+					<Price>
+						<BaseAmount Code="USD">68542</BaseAmount>
+						<Taxes>
+							<Total Code="USD">3278</Total>
+							<Breakdown>
+								<Tax CollectionInd="true">
+									<Amount Code="USD">560</Amount>
+									<Nation>US</Nation>
+									<TaxCode>AY</TaxCode>
+									<LocalAmount Code="USD">560</LocalAmount>
+									<Description>PASSENGER CIVIL AVIATION SECURITY SERVICE FEE</Description>
+								</Tax>
+								<Tax CollectionInd="true">
+									<Amount Code="USD">658</Amount>
+									<Nation>US</Nation>
+									<TaxCode>US</TaxCode>
+									<Description>TRANSPORTATION TAX DOMESTIC NOT WHOLLY WITHIN THE US</Description>
+								</Tax>
+								<Tax CollectionInd="true">
+									<Amount Code="USD">1110</Amount>
+									<Nation>US</Nation>
+									<TaxCode>US</TaxCode>
+									<LocalAmount Code="USD">1110</LocalAmount>
+									<Description>TRANSPORTATION TAX INTERNATIONAL DEPARTURE</Description>
+								</Tax>
+								<Tax CollectionInd="true">
+									<Amount Code="USD">450</Amount>
+									<Nation>US</Nation>
+									<TaxCode>XF</TaxCode>
+									<CollectionPoint>
+										<CurrCode NumberOfDecimals="2">USD</CurrCode>
+										<AirportAmount>450</AirportAmount>
+										<AirportCode>LAS</AirportCode>
+									</CollectionPoint>
+									<LocalAmount Code="USD">450</LocalAmount>
+									<Description>US PASSENGER FACILITY CHARGE</Description>
+								</Tax>
+								<Tax CollectionInd="true">
+									<Amount Code="USD">500</Amount>
+									<Nation>US</Nation>
+									<TaxCode>ZP</TaxCode>
+									<CollectionPoint>
+										<CurrCode NumberOfDecimals="2">USD</CurrCode>
+										<AirportAmount>500</AirportAmount>
+										<AirportCode>LAS</AirportCode>
+									</CollectionPoint>
+									<LocalAmount Code="USD">500</LocalAmount>
+									<Description>FLIGHT SEGMENT TAX DOMESTIC</Description>
+								</Tax>
+							</Breakdown>
+						</Taxes>
+					</Price>
+					<FareBasis>
+						<FareBasisCode refs="Pfcp8cx6jfjdp1htp">
+							<Code>BHX0ODBN</Code>
+						</FareBasisCode>
+						<FareBasisCityPair>LASHNLHA</FareBasisCityPair>
+						<RBD>U</RBD>
+						<CabinType>
+							<CabinTypeCode>Y</CabinTypeCode>
+							<CabinTypeName>MAIN CABIN</CabinTypeName>
+						</CabinType>
+					</FareBasis>
+					<FareRules>
+						<Penalty CancelFeeInd="false" ChangeFeeInd="false" RefundableInd="false">
+							<Details>
+								<Detail refs="PcncP9A8D7945-EB31-426C-8391N">
+									<Type>Cancel</Type>
+								</Detail>
+								<Detail refs="PchgP9A8D7945-EB31-426C-8391N">
+									<Type>Change</Type>
+								</Detail>
+							</Details>
+						</Penalty>
+						<AdvanceStay>
+							<AdvanceTicketing>
+								<AdvanceReservation Context="Earliest">P1D</AdvanceReservation>
+								<AdvanceDeparture Context="Latest">P1D</AdvanceDeparture>
+							</AdvanceTicketing>
+						</AdvanceStay>
+					</FareRules>
+					<PriceClassRef>Ppc3khyq40tvqw7l</PriceClassRef>
+					<SegmentRefs ON_Point="LAS" OFF_Point="HNL">Isgm01001c0487649</SegmentRefs>
+				</FareComponent>
+				<FlightMileage>
+					<Value>2761</Value>
+					<Application>Trip</Application>
+				</FlightMileage>
+			</FareDetail>
+		</OfferItem>
+		<BaggageAllowance>
+			<FlightRefs>Pflt6mp35u7yx9als</FlightRefs>
+			<PassengerRefs>T1</PassengerRefs>
+			<BaggageAllowanceRef>Pbgatibxye2qaazrh</BaggageAllowanceRef>
+		</BaggageAllowance>
+		<BaggageAllowance>
+			<FlightRefs>Pflt6mp35u7yx9als</FlightRefs>
+			<PassengerRefs>T1</PassengerRefs>
+			<BaggageAllowanceRef>Pcyonxfszmod3zjg4</BaggageAllowanceRef>
+		</BaggageAllowance>
+	</PricedOffer>
+	<Commission>
+		<Amount Code="USD">1500</Amount>
+	</Commission>
+	<DataLists>
+		<PassengerList>
+			<Passenger PassengerID="T1">
+				<PTC>ADT</PTC>
+			</Passenger>
+		</PassengerList>
+		<BagDisclosureList>
+			<BagDisclosure ListKey="Pbdc9za08pebzlcv8">
+				<BagRule>Y</BagRule>
+				<Descriptions>
+					<Description>
+						<Text>Subject to US DOT Reservation and Disclosure at time of fare quote and ticketing</Text>
+					</Description>
+				</Descriptions>
+			</BagDisclosure>
+		</BagDisclosureList>
+		<BaggageAllowanceList>
+			<BaggageAllowance BaggageAllowanceID="Pbgatibxye2qaazrh">
+				<BaggageCategory>Checked</BaggageCategory>
+				<AllowanceDescription>
+					<ApplicableParty>Traveler</ApplicableParty>
+					<Descriptions>
+						<Description>
+							<Text>CHECKED ALLOWANCE</Text>
+						</Description>
+					</Descriptions>
+				</AllowanceDescription>
+				<PieceAllowance>
+					<ApplicableParty>Traveler</ApplicableParty>
+					<TotalQuantity>0</TotalQuantity>
+					<PieceMeasurements Quantity="0">
+						<PieceWeightAllowance>
+							<MaximumWeight>
+								<Value>23</Value>
+								<UOM>KG</UOM>
+							</MaximumWeight>
+							<MaximumWeight>
+								<Value>50</Value>
+								<UOM>LBS</UOM>
+							</MaximumWeight>
+						</PieceWeightAllowance>
+						<PieceDimensionAllowance>
+							<ApplicableParty>Traveler</ApplicableParty>
+							<DimensionUOM>Centimeter</DimensionUOM>
+							<MaxLinear>158</MaxLinear>
+							<MinLinear>0</MinLinear>
+						</PieceDimensionAllowance>
+						<PieceDimensionAllowance>
+							<ApplicableParty>Traveler</ApplicableParty>
+							<DimensionUOM>Inch</DimensionUOM>
+							<MaxLinear>62</MaxLinear>
+							<MinLinear>0</MinLinear>
+						</PieceDimensionAllowance>
+					</PieceMeasurements>
+				</PieceAllowance>
+				<BaggageDeterminingCarrier>
+					<AirlineID>HA</AirlineID>
+				</BaggageDeterminingCarrier>
+			</BaggageAllowance>
+			<BaggageAllowance BaggageAllowanceID="Pcyonxfszmod3zjg4">
+				<BaggageCategory>CarryOn</BaggageCategory>
+				<AllowanceDescription>
+					<ApplicableParty>Traveler</ApplicableParty>
+					<Descriptions>
+						<Description>
+							<Text>CARRYON HAND BAGGAGE ALLOWANCE</Text>
+						</Description>
+						<Description>
+							<Text>CARRY ON UP TO 45 LI 115 LCM</Text>
+						</Description>
+						<Description>
+							<Text>CARRY ON HAND BAGGAGE</Text>
+						</Description>
+					</Descriptions>
+				</AllowanceDescription>
+				<PieceAllowance>
+					<ApplicableParty>Traveler</ApplicableParty>
+					<TotalQuantity>1</TotalQuantity>
+					<PieceMeasurements Quantity="1">
+						<PieceDimensionAllowance>
+							<ApplicableParty>Traveler</ApplicableParty>
+							<DimensionUOM>Centimeter</DimensionUOM>
+							<MaxLinear>115</MaxLinear>
+							<MinLinear>0</MinLinear>
+						</PieceDimensionAllowance>
+						<PieceDimensionAllowance>
+							<ApplicableParty>Traveler</ApplicableParty>
+							<DimensionUOM>Inch</DimensionUOM>
+							<MaxLinear>45</MaxLinear>
+							<MinLinear>0</MinLinear>
+						</PieceDimensionAllowance>
+					</PieceMeasurements>
+				</PieceAllowance>
+				<BaggageDeterminingCarrier>
+					<AirlineID>HA</AirlineID>
+				</BaggageDeterminingCarrier>
+			</BaggageAllowance>
+		</BaggageAllowanceList>
+		<FareList>
+			<FareGroup refs="Pfrk8cx6jfjdp1htp" ListKey="Pfcp8cx6jfjdp1htp">
+				<Fare>
+					<FareCode>70J</FareCode>
+				</Fare>
+				<FareBasisCode>
+					<Code>BHX0ODBN</Code>
+				</FareBasisCode>
+			</FareGroup>
+		</FareList>
+		<FlightSegmentList>
+			<FlightSegment SegmentKey="Isgm01001c0487649" ConnectInd="false" ElectronicTicketInd="true" SecureFlight="true">
+				<Departure>
+					<AirportCode>LAS</AirportCode>
+					<Date>2024-12-02</Date>
+					<Time>01:25</Time>
+					<AirportName>Las Vegas Harry Reid Intl, US</AirportName>
+					<Terminal>
+						<Name>3</Name>
+					</Terminal>
+				</Departure>
+				<Arrival>
+					<AirportCode>HNL</AirportCode>
+					<Date>2024-12-02</Date>
+					<Time>05:55</Time>
+					<ChangeOfDay>0</ChangeOfDay>
+					<AirportName>Honolulu, US</AirportName>
+					<Terminal>
+						<Name>1</Name>
+					</Terminal>
+				</Arrival>
+				<MarketingCarrier>
+					<AirlineID>HA</AirlineID>
+					<Name>Hawaiian Airlines</Name>
+					<FlightNumber>17</FlightNumber>
+				</MarketingCarrier>
+				<Equipment>
+					<AircraftCode>332</AircraftCode>
+					<Name>Airbus A330-200</Name>
+				</Equipment>
+				<FlightDetail>
+					<FlightDistance>
+						<Value>2761</Value>
+						<UOM>Miles</UOM>
+					</FlightDistance>
+					<FlightDuration>
+						<Value>PT06H30M</Value>
+					</FlightDuration>
+				</FlightDetail>
+			</FlightSegment>
+		</FlightSegmentList>
+		<FlightList>
+			<Flight FlightKey="Pflt6mp35u7yx9als">
+				<Journey>
+					<Time>PT06H30M</Time>
+				</Journey>
+				<SegmentReferences OnPoint="LAS" OffPoint="HNL">Isgm01001c0487649</SegmentReferences>
+			</Flight>
+		</FlightList>
+		<OriginDestinationList>
+			<OriginDestination OriginDestinationKey="OD1">
+				<DepartureCode>LAS</DepartureCode>
+				<ArrivalCode>HNL</ArrivalCode>
+				<FlightReferences OnPoint="LAS" OffPoint="HNL">Pflt6mp35u7yx9als</FlightReferences>
+			</OriginDestination>
+		</OriginDestinationList>
+		<MediaList>
+			<Media ListKey="Pmlklvvrgpqozcyfq">
+				<MediaLink>http://img.s-hawaiianairlines.com/static/DAM/Boeing%20717%20Main%20Cabin%20Basic.jpg</MediaLink>
+				<Descriptions>
+					<Description>
+						<Text>URL</Text>
+					</Description>
+				</Descriptions>
+			</Media>
+			<Media ListKey="Pmlkiwh8r4p4ntbs1">
+				<MediaLink>http://img.s-hawaiianairlines.com/static/DAM/Airbus%20A321%20Main%20Cabin%20Basic.jpg</MediaLink>
+				<Descriptions>
+					<Description>
+						<Text>URL</Text>
+					</Description>
+				</Descriptions>
+			</Media>
+			<Media ListKey="Pmlkyxbtzcp7v754z">
+				<MediaLink>http://img.s-hawaiianairlines.com/static/DAM/Airbus%20A330%20Main%20Cabin%20Basic.jpg</MediaLink>
+				<Descriptions>
+					<Description>
+						<Text>URL</Text>
+					</Description>
+				</Descriptions>
+			</Media>
+		</MediaList>
+		<PriceClassList>
+			<PriceClass PriceClassID="Ppc3khyq40tvqw7l">
+				<Name>Main Cabin Basic</Name>
+				<Code>MCB</Code>
+				<Descriptions>
+					<Description>
+						<OriginDestinationReference>OD1</OriginDestinationReference>
+					</Description>
+					<Description>
+						<Text>Seat assignments provided at check-in. Traveling parties may not be seated together.</Text>
+					</Description>
+					<Description>
+						<Text>No paid or complimentary upgrades available</Text>
+					</Description>
+					<Description>
+						<Text>Checked bag for a fee</Text>
+					</Description>
+					<Description>
+						<Text>Complimentary non-alcoholic beverages</Text>
+					</Description>
+					<Description>
+						<Text>Complimentary meals (at mealtime), snacks and beverages (North America &amp; International flights)</Text>
+					</Description>
+					<Description>
+						<Text>Complimentary carry-on bag and personal item</Text>
+					</Description>
+					<Description>
+						<Text>Complimentary Streaming In-flight Entertainment (North America Airbus A321 flights)</Text>
+					</Description>
+					<Description>
+						<Text>Complimentary In-flight Entertainment (North America &amp; International Airbus A330 flights)</Text>
+					</Description>
+					<Description>
+						<Text>USB port (North America &amp; International flights)</Text>
+					</Description>
+					<Description>
+						<Text>Last boarding zone</Text>
+					</Description>
+					<Description>
+						<Text>HawaiianMiles members earn one mile for every mile flown, but not eligible for bonus miles</Text>
+					</Description>
+					<Description>
+						<Text>Please see fare rules</Text>
+					</Description>
+					<Description>
+						<Text>Icons</Text>
+						<Media>
+							<ObjectID>MEALS</ObjectID>
+						</Media>
+					</Description>
+					<Description>
+						<Text>Icons</Text>
+						<Media>
+							<ObjectID>SNACKS</ObjectID>
+						</Media>
+					</Description>
+					<Description>
+						<Text>Icons</Text>
+						<Media>
+							<ObjectID>HANDLUGGAGE</ObjectID>
+						</Media>
+					</Description>
+					<Description>
+						<Text>Icons</Text>
+						<Media>
+							<ObjectID>CHANGES</ObjectID>
+						</Media>
+					</Description>
+					<Description>
+						<Text>Icons</Text>
+						<Media>
+							<ObjectID>MILEAGEACCRUAL</ObjectID>
+						</Media>
+					</Description>
+					<Description>
+						<Text>Icons</Text>
+						<Media>
+							<ObjectID>WIFI</ObjectID>
+						</Media>
+					</Description>
+					<Description>
+						<Text>Boeing 717 Main Cabin Basic</Text>
+						<Media>
+							<MediaLink refs="Pmlklvvrgpqozcyfq"></MediaLink>
+						</Media>
+					</Description>
+					<Description>
+						<Text>Airbus A321 Main Cabin Basic</Text>
+						<Media>
+							<MediaLink refs="Pmlkiwh8r4p4ntbs1"></MediaLink>
+						</Media>
+					</Description>
+					<Description>
+						<Text>Airbus A330 Main Cabin Basic</Text>
+						<Media>
+							<MediaLink refs="Pmlkyxbtzcp7v754z"></MediaLink>
+						</Media>
+					</Description>
+				</Descriptions>
+				<DisplayOrder>2</DisplayOrder>
+			</PriceClass>
+		</PriceClassList>
+	</DataLists>
+	<Metadata>
+		<Other>
+			<OtherMetadata>
+				<CurrencyMetadatas>
+					<CurrencyMetadata MetadataKey="USD">
+						<Application>Display</Application>
+						<Decimals>2</Decimals>
+					</CurrencyMetadata>
+				</CurrencyMetadatas>
+			</OtherMetadata>
+			<OtherMetadata>
+				<PriceMetadatas>
+					<PriceMetadata MetadataKey="Pfrk8cx6jfjdp1htp">
+						<AugmentationPoint>
+							<AugPoint>
+								<FareRefKey xmlns="http://ndc.farelogix.com/aug">NO8EJWN~MVB8OLO~MNR9G~MpB8G?~MpN8GLK~MqB9J@Q~MDB8AFW.NBAL~MAW80.4.~MMB84.70~MBB86243~MRO8OSAJ~MPM8M@/.~MPN85~MQ/9CNS~MMQ80~MOV9?CR~MPA873~MBS800553~MSK907/~MAA877~MDC8N@~M?L856421~MBS9SRB~MQD860~MBV876~MPS8//0~MER91/~MQP978~MAP9S~MNQ8T~MCP9@~MDQ80*sShWqoRFeijI*flxKey</FareRefKey>
+							</AugPoint>
+						</AugmentationPoint>
+					</PriceMetadata>
+					<PriceMetadata MetadataKey="Pcomvw2fehsvr61f8">
+						<AugmentationPoint>
+							<AugPoint>
+								<OrderCommission xmlns="http://ndc.farelogix.com/aug">
+									<OfferItemID>P9A8D7945-EB31-426C-8391f13dpoteginz5-1-1</OfferItemID>
+									<Amount Code="USD">1500</Amount>
+									<Code>COMM_15_TEST</Code>
+								</OrderCommission>
+							</AugPoint>
+						</AugmentationPoint>
+					</PriceMetadata>
+				</PriceMetadatas>
+			</OtherMetadata>
+			<OtherMetadata>
+				<RuleMetadatas>
+					<RuleMetadata MetadataKey="PcncP9A8D7945-EB31-426C-8391N">
+						<RuleID>Cancel</RuleID>
+						<Values>
+							<Value>
+								<Instruction>Not Allowed</Instruction>
+							</Value>
+						</Values>
+					</RuleMetadata>
+					<RuleMetadata MetadataKey="PchgP9A8D7945-EB31-426C-8391N">
+						<RuleID>Change</RuleID>
+						<Values>
+							<Value>
+								<Instruction>Not Allowed</Instruction>
+							</Value>
+						</Values>
+					</RuleMetadata>
+				</RuleMetadatas>
+			</OtherMetadata>
+		</Other>
+	</Metadata>
 </OfferPriceRS>
 </RSP></ns1:XXTransactionResponse></SOAP-ENV:Body></SOAP-ENV:Envelope>
