@@ -19,9 +19,11 @@ class APIAutomation:
             self.offerprice_template = file.read()
         with open(os.path.join(script_dir, 'OC.txt'), 'r') as file:
             self.ordercreate_template = file.read()
+        with open(os.path.join(script_dir, 'OCanc.txt'), 'r') as file:
+            self.ordercancel_template = file.read()
 
     def format_xml(self, template, pseudocity, agtpwd, agy, origin, destination, departure_date, 
-                    ResponseID=None, OfferID=None, OfferItemID=None):
+                    ResponseID=None, OfferID=None, OfferItemID=None, order_id=None):
         return template.format(
             pseudocity=pseudocity,
             agtpwd=agtpwd,
@@ -31,7 +33,8 @@ class APIAutomation:
             departure_date=departure_date,
             ResponseID=ResponseID or '',
             OfferID=OfferID or '',
-            OfferItemID=OfferItemID or ''
+            OfferItemID=OfferItemID or '',
+            order_id=order_id or ''
         )
 
     def send_soap_request(self, xml_request):
@@ -71,17 +74,47 @@ class APIAutomation:
                     break
         return offers
 
+    def cancel_order(self, pseudocity, agtpwd, agy, order_id):
+        """Send order cancellation request"""
+        print("\nMaking OrderCancel API call...")
+        cancel_request = self.format_xml(
+            self.ordercancel_template,
+            pseudocity=pseudocity,
+            agtpwd=agtpwd,
+            agy=agy,
+            origin='', destination='', departure_date='',  # Empty strings for unused params
+            ResponseID='', OfferID='', OfferItemID='',    # Empty strings for unused params
+            order_id=order_id  # Add the order_id parameter
+        )
+        
+        try:
+            cancel_response = self.send_soap_request(cancel_request)
+            self.save_response("OrderCancellation.xml", cancel_response.text)
+            print("OrderCancel request successful! Response saved to OrderCancellation.xml")
+            print("\n=== Order Cancelled ===")
+            print(f"OrderID: {order_id}")
+            return cancel_response
+        except requests.exceptions.HTTPError as e:
+            error_response = str(e.response.content if hasattr(e, 'response') else e)
+            self.save_response("OrderCancellationError.xml", error_response)
+            print(f"Error in order cancellation: {e}")
+            return None
+        except Exception as e:
+            self.save_response("OrderCancellationError.xml", str(e))
+            print(f"Error in order cancellation: {e}")
+            return None
+
 def main():
     # Initialize API automation
     api = APIAutomation()
     
     # Set parameters
-    pseudocity = "BJBE"
-    agtpwd = "Narayan1234"
+    pseudocity = "A74K"
+    agtpwd = "Narayan@1234"
     agy = "12992280"
-    origin = "LAS"
-    destination = "HNL"
-    departure_date = "2024-12-02"
+    origin = "HNL"
+    destination = "PHX"
+    departure_date = "2025-01-01"
     
     # Step 1: Send AirShopping request
     airshopping_request = api.format_xml(
@@ -216,7 +249,10 @@ def main():
                     order = oc_root.find('.//Order')
                     if order is not None:
                         order_id = order.get('OrderID')
-                        print(f"OrderID: {order_id}")  # HA173HN5TS5A2
+                        print(f"OrderID: {order_id}")
+                        
+                        # Add order cancellation call here
+                        cancel_response = api.cancel_order(pseudocity, agtpwd, agy, order_id)
                     
                     # Get BookingReferences
                     booking_refs = oc_root.findall('.//BookingReference')

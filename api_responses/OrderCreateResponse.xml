@@ -1,4 +1,4 @@
-<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" xmlns:xsd="http://www.w3.org/1999/XMLSchema/" xmlns:xsi="http://www.w3.org/1999/XMLSchema/instance/"><SOAP-ENV:Header><t:Transaction xmlns:t="xxs"><tc><pid>FLX DMServer TC1 (8800/3070) STG 0a43</pid><tid>1616E93A-61B1F0F0</tid><dt>2024-11-28T08:55:32</dt></tc></t:Transaction></SOAP-ENV:Header><SOAP-ENV:Body><ns1:XXTransactionResponse xmlns:ns1="xxs"><RSP><OrderViewRS Version="17.2" TransactionIdentifier="5b240834d7e511eda46d84fdd1ef000f">
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" xmlns:xsd="http://www.w3.org/1999/XMLSchema/" xmlns:xsi="http://www.w3.org/1999/XMLSchema/instance/"><SOAP-ENV:Header><t:Transaction xmlns:t="xxs"><tc><pid>FLX DMServer TC1 (8800/3070) STG 0a5d</pid><tid>3DA04E8E-2457F450</tid><dt>2024-12-06T06:21:06</dt></tc></t:Transaction></SOAP-ENV:Header><SOAP-ENV:Body><ns1:XXTransactionResponse xmlns:ns1="xxs"><RSP><OrderViewRS Version="17.2" TransactionIdentifier="5b240834d7e511eda46d84fdd1ef000f">
 	<Document></Document>
 	<Party>
 		<Sender>
@@ -8,11 +8,11 @@
 		</Sender>
 		<Recipient>
 			<TravelAgencyRecipient>
-				<PseudoCity Owner="F1">BJBE</PseudoCity>
+				<PseudoCity Owner="F1">A74K</PseudoCity>
 				<AgencyID>12992280</AgencyID>
 				<AgentUser>
 					<Name>12992280</Name>
-					<PseudoCity Owner="F1">BJBE</PseudoCity>
+					<PseudoCity Owner="F1">A74K</PseudoCity>
 					<IATA_Number>12992280</IATA_Number>
 					<AgentUserID>NGayake</AgentUserID>
 				</AgentUser>
@@ -20,21 +20,25 @@
 		</Recipient>
 	</Party>
 	<Success></Success>
+	<Warnings>
+		<Warning Owner="HAA">Departure Time changed for HA36 2025-01-01 HNLPHX</Warning>
+		<Warning Owner="HAA">Arrival Time changed for HA36 2025-01-01 HNLPHX</Warning>
+	</Warnings>
 	<Response>
-		<Order OrderID="HA173HZ5TS5A2" Owner="HAA">
+		<Order OrderID="HA173HY75P5A2" Owner="HAA">
 			<BookingReferences>
 				<BookingReference>
-					<ID>BZ5TS5</ID>
+					<ID>NY75P5</ID>
 					<OtherID>F1</OtherID>
 				</BookingReference>
 				<BookingReference>
-					<ID>3TEMZ4</ID>
+					<ID>25P8AN</ID>
 					<AirlineID Name="Hawaiian Airlines">HAA</AirlineID>
 				</BookingReference>
 			</BookingReferences>
 			<TotalOrderPrice>
 				<DetailCurrencyPrice>
-					<Total Code="USD">71820</Total>
+					<Total Code="USD">70820</Total>
 				</DetailCurrencyPrice>
 			</TotalOrderPrice>
 			<Status>
@@ -47,10 +51,10 @@
 						<StatusCode>395</StatusCode>
 					</Status>
 					<Amount>
-						<SimpleCurrencyPrice Code="USD">71820</SimpleCurrencyPrice>
+						<SimpleCurrencyPrice Code="USD">70820</SimpleCurrencyPrice>
 					</Amount>
 					<Method>
-						<PaymentCardMethod refs="PFMC816F711">
+						<PaymentCardMethod refs="PFM51A55D7">
 							<CardCode>VI</CardCode>
 							<MaskedCardNumber>XXXXXXXXXXXX0008</MaskedCardNumber>
 							<CardHolderName>Chetan Inamdar</CardHolderName>
@@ -68,37 +72,37 @@
 							</EffectiveExpireDate>
 						</PaymentCardMethod>
 					</Method>
-					<OrderItemID>P9A8D7945-EB31-426C-8391f13dpoteginz5-1-1</OrderItemID>
+					<OrderItemID>P255517F7-D3AE-4A63-B4B4q7l5lwnzen33l-1-1</OrderItemID>
 				</Payment>
 			</Payments>
 			<OrderItems>
-				<OrderItem OrderItemID="P9A8D7945-EB31-426C-8391f13dpoteginz5-1-1" Timestamp="2024-11-28T08:55:00">
+				<OrderItem OrderItemID="P255517F7-D3AE-4A63-B4B4q7l5lwnzen33l-1-1" Timestamp="2024-12-06T06:21:00">
 					<PriceDetail>
 						<TotalAmount>
 							<DetailCurrencyPrice>
-								<Total Code="USD">71820</Total>
+								<Total Code="USD">70820</Total>
 							</DetailCurrencyPrice>
 						</TotalAmount>
-						<BaseAmount Code="USD">68542</BaseAmount>
+						<BaseAmount Code="USD">67552</BaseAmount>
 						<Taxes>
-							<Total Code="USD">3278</Total>
+							<Total Code="USD">3268</Total>
 						</Taxes>
 					</PriceDetail>
 					<Service ServiceID="BAGGAGESRV1-T1">
 						<PassengerRef>T1</PassengerRef>
-						<ServiceDefinitionRef SegmentRef="S2">BASRV7B870F23</ServiceDefinitionRef>
+						<ServiceDefinitionRef SegmentRef="S2">BASRV137BCB04</ServiceDefinitionRef>
 					</Service>
 					<Service ServiceID="BAGGAGESRV2-T1">
 						<PassengerRef>T1</PassengerRef>
-						<ServiceDefinitionRef SegmentRef="S2">BASRV7587DC3D-CO</ServiceDefinitionRef>
+						<ServiceDefinitionRef SegmentRef="S2">BASRV1A740D55-CO</ServiceDefinitionRef>
 					</Service>
 					<Service ServiceID="SRV1-T1-S2" ServiceStatus="HK">
 						<PassengerRef>T1</PassengerRef>
 						<SegmentRef>S2</SegmentRef>
 					</Service>
 					<TimeLimits>
-						<PaymentTimeLimit Timestamp="2024-11-29T03:55:00"></PaymentTimeLimit>
-						<TicketingTimeLimits Timestamp="2024-11-29T03:55:00"></TicketingTimeLimits>
+						<PaymentTimeLimit Timestamp="2024-12-07T01:21:00"></PaymentTimeLimit>
+						<TicketingTimeLimits Timestamp="2024-12-07T01:21:00"></TicketingTimeLimits>
 					</TimeLimits>
 					<Penalty RefundableInd="false"></Penalty>
 					<OrderItemDetails>
@@ -115,12 +119,12 @@
 						<Price>
 							<TotalAmount>
 								<DetailCurrencyPrice>
-									<Total Code="USD">71820</Total>
+									<Total Code="USD">70820</Total>
 								</DetailCurrencyPrice>
 							</TotalAmount>
-							<BaseAmount Code="USD">68542</BaseAmount>
+							<BaseAmount Code="USD">67552</BaseAmount>
 							<Taxes>
-								<Total Code="USD">3278</Total>
+								<Total Code="USD">3268</Total>
 								<Breakdown>
 									<Tax RefundInd="false">
 										<Amount Code="USD">560</Amount>
@@ -130,7 +134,7 @@
 										<Description>PASSENGER CIVIL AVIATION SECURITY SERVICE FEE</Description>
 									</Tax>
 									<Tax RefundInd="false">
-										<Amount Code="USD">658</Amount>
+										<Amount Code="USD">648</Amount>
 										<Nation>US</Nation>
 										<TaxCode>US</TaxCode>
 										<Description>TRANSPORTATION TAX DOMESTIC NOT WHOLLY WITHIN THE US</Description>
@@ -149,7 +153,7 @@
 										<CollectionPoint>
 											<CurrCode NumberOfDecimals="2">USD</CurrCode>
 											<AirportAmount>450</AirportAmount>
-											<AirportCode>LAS</AirportCode>
+											<AirportCode>HNL</AirportCode>
 										</CollectionPoint>
 										<LocalAmount Code="USD">450</LocalAmount>
 										<Description>US PASSENGER FACILITY CHARGE</Description>
@@ -161,7 +165,7 @@
 										<CollectionPoint>
 											<CurrCode NumberOfDecimals="2">USD</CurrCode>
 											<AirportAmount>500</AirportAmount>
-											<AirportCode>LAS</AirportCode>
+											<AirportCode>HNL</AirportCode>
 										</CollectionPoint>
 										<LocalAmount Code="USD">500</LocalAmount>
 										<Description>FLIGHT SEGMENT TAX DOMESTIC</Description>
@@ -173,12 +177,12 @@
 							<Price>
 								<TotalAmount>
 									<DetailCurrencyPrice>
-										<Total Code="USD">71820</Total>
+										<Total Code="USD">70820</Total>
 									</DetailCurrencyPrice>
 								</TotalAmount>
-								<BaseAmount Code="USD">68542</BaseAmount>
+								<BaseAmount Code="USD">67552</BaseAmount>
 								<Taxes>
-									<Total Code="USD">3278</Total>
+									<Total Code="USD">3268</Total>
 									<Breakdown>
 										<Tax>
 											<Amount Code="USD">560</Amount>
@@ -188,7 +192,7 @@
 											<Description>PASSENGER CIVIL AVIATION SECURITY SERVICE FEE</Description>
 										</Tax>
 										<Tax>
-											<Amount Code="USD">658</Amount>
+											<Amount Code="USD">648</Amount>
 											<Nation>US</Nation>
 											<TaxCode>US</TaxCode>
 											<Description>TRANSPORTATION TAX DOMESTIC NOT WHOLLY WITHIN THE US</Description>
@@ -207,7 +211,7 @@
 											<CollectionPoint>
 												<CurrCode NumberOfDecimals="2">USD</CurrCode>
 												<AirportAmount>450</AirportAmount>
-												<AirportCode>LAS</AirportCode>
+												<AirportCode>HNL</AirportCode>
 											</CollectionPoint>
 											<LocalAmount Code="USD">450</LocalAmount>
 											<Description>US PASSENGER FACILITY CHARGE</Description>
@@ -219,7 +223,7 @@
 											<CollectionPoint>
 												<CurrCode NumberOfDecimals="2">USD</CurrCode>
 												<AirportAmount>500</AirportAmount>
-												<AirportCode>LAS</AirportCode>
+												<AirportCode>HNL</AirportCode>
 											</CollectionPoint>
 											<LocalAmount Code="USD">500</LocalAmount>
 											<Description>FLIGHT SEGMENT TAX DOMESTIC</Description>
@@ -240,10 +244,10 @@
 							<FareRules>
 								<Penalty RefundableInd="false" CancelFeeInd="false" ChangeFeeInd="false">
 									<Details>
-										<Detail refs="RM71465D36">
+										<Detail refs="RM31AEA9D0">
 											<Type>Change</Type>
 										</Detail>
-										<Detail refs="RM98130DA4">
+										<Detail refs="RME0004BBB">
 											<Type>Cancel</Type>
 										</Detail>
 									</Details>
@@ -262,10 +266,10 @@
 								</Ticketing>
 							</FareRules>
 							<PriceClassRef>HAAMainCabinBasic-1</PriceClassRef>
-							<SegmentRefs ON_Point="LAS" OFF_Point="HNL">S2</SegmentRefs>
+							<SegmentRefs ON_Point="HNL" OFF_Point="PHX">S2</SegmentRefs>
 						</FareComponent>
 						<FlightMileage>
-							<Value>2761</Value>
+							<Value>2914</Value>
 						</FlightMileage>
 					</FareDetail>
 				</OrderItem>
@@ -284,11 +288,11 @@
 					<Place>Honolulu, HI, US</Place>
 				</IssuingAirlineInfo>
 				<TicketDocument PenaltyRestrictionInd="true" NonRefundableInd="true">
-					<TicketDocNbr>17357558931005</TicketDocNbr>
+					<TicketDocNbr>17357561182393</TicketDocNbr>
 					<Type>702</Type>
 					<NumberofBooklets>1</NumberofBooklets>
-					<DateOfIssue>2024-11-28</DateOfIssue>
-					<TimeOfIssue>03:55</TimeOfIssue>
+					<DateOfIssue>2024-12-06</DateOfIssue>
+					<TimeOfIssue>01:21</TimeOfIssue>
 					<TicketingLocation>HNL</TicketingLocation>
 					<CouponInfo>
 						<CouponNumber>1</CouponNumber>
@@ -299,37 +303,37 @@
 						<CouponMedia>Electronic</CouponMedia>
 						<CouponValid>
 							<EffectiveDatePeriod>
-								<Effective>2024-12-02</Effective>
-								<Expiration>2024-12-02</Expiration>
+								<Effective>2025-01-01</Effective>
+								<Expiration>2025-01-01</Expiration>
 							</EffectiveDatePeriod>
 						</CouponValid>
 						<Status>I</Status>
 						<CurrentAirlineInfo>
-							<DepartureDateTime ShortDate="2024-12-02" Time="01:25"></DepartureDateTime>
-							<ArrivalDateTime ShortDate="2024-12-02" Time="05:55"></ArrivalDateTime>
+							<DepartureDateTime ShortDate="2025-01-01" Time="15:00"></DepartureDateTime>
+							<ArrivalDateTime ShortDate="2025-01-01" Time="23:45"></ArrivalDateTime>
 							<Departure>
-								<AirportCode>LAS</AirportCode>
-								<Date>2024-12-02</Date>
-								<Time>01:25</Time>
-								<AirportName>Las Vegas Harry Reid Intl, US</AirportName>
-								<Terminal>
-									<Name>3</Name>
-								</Terminal>
-							</Departure>
-							<Arrival>
 								<AirportCode>HNL</AirportCode>
-								<Date>2024-12-02</Date>
-								<Time>05:55</Time>
-								<ChangeOfDay>0</ChangeOfDay>
+								<Date>2025-01-01</Date>
+								<Time>15:00</Time>
 								<AirportName>Honolulu, US</AirportName>
 								<Terminal>
 									<Name>1</Name>
+								</Terminal>
+							</Departure>
+							<Arrival>
+								<AirportCode>PHX</AirportCode>
+								<Date>2025-01-01</Date>
+								<Time>23:45</Time>
+								<ChangeOfDay>0</ChangeOfDay>
+								<AirportName>Phoenix Sky Harbor Intl Apt, US</AirportName>
+								<Terminal>
+									<Name>3</Name>
 								</Terminal>
 							</Arrival>
 							<MarketingCarrier>
 								<AirlineID>HA</AirlineID>
 								<Name>Hawaiian Airlines</Name>
-								<FlightNumber>17</FlightNumber>
+								<FlightNumber>36</FlightNumber>
 								<ResBookDesigCode>U</ResBookDesigCode>
 							</MarketingCarrier>
 							<Equipment>
@@ -345,16 +349,16 @@
 					</CouponInfo>
 					<ReportingType>ARC</ReportingType>
 				</TicketDocument>
-				<Price refs="FCALC8C5461B">
-					<Total Code="USD">71820</Total>
+				<Price refs="FCALC9D66D01F">
+					<Total Code="USD">70820</Total>
 					<Details>
 						<Detail>
 							<Application>Base Fare</Application>
-							<Amount Code="USD">68542</Amount>
+							<Amount Code="USD">67552</Amount>
 						</Detail>
 					</Details>
 					<Taxes>
-						<Total Code="USD">3278</Total>
+						<Total Code="USD">3268</Total>
 						<Breakdown>
 							<Tax RefundInd="false">
 								<Amount Code="USD">560</Amount>
@@ -364,7 +368,7 @@
 								<Description>PASSENGER CIVIL AVIATION SECURITY SERVICE FEE</Description>
 							</Tax>
 							<Tax RefundInd="false">
-								<Amount Code="USD">658</Amount>
+								<Amount Code="USD">648</Amount>
 								<Nation>US</Nation>
 								<TaxCode>US</TaxCode>
 								<Description>TRANSPORTATION TAX DOMESTIC NOT WHOLLY WITHIN THE US</Description>
@@ -383,7 +387,7 @@
 								<CollectionPoint>
 									<CurrCode NumberOfDecimals="2">USD</CurrCode>
 									<AirportAmount>450</AirportAmount>
-									<AirportCode>LAS</AirportCode>
+									<AirportCode>HNL</AirportCode>
 								</CollectionPoint>
 								<LocalAmount Code="USD">450</LocalAmount>
 								<Description>US PASSENGER FACILITY CHARGE</Description>
@@ -395,7 +399,7 @@
 								<CollectionPoint>
 									<CurrCode NumberOfDecimals="2">USD</CurrCode>
 									<AirportAmount>500</AirportAmount>
-									<AirportCode>LAS</AirportCode>
+									<AirportCode>HNL</AirportCode>
 								</CollectionPoint>
 								<LocalAmount Code="USD">500</LocalAmount>
 								<Description>FLIGHT SEGMENT TAX DOMESTIC</Description>
@@ -460,7 +464,7 @@
 				</BagDisclosure>
 			</BagDisclosureList>
 			<BaggageAllowanceList>
-				<BaggageAllowance BaggageAllowanceID="BAB958E797-CO">
+				<BaggageAllowance BaggageAllowanceID="BA64F2F2B5-CO">
 					<BaggageCategory>CarryOn</BaggageCategory>
 					<AllowanceDescription>
 						<ApplicableParty>Traveler</ApplicableParty>
@@ -509,7 +513,7 @@
 						<AirlineID>HA</AirlineID>
 					</BaggageDeterminingCarrier>
 				</BaggageAllowance>
-				<BaggageAllowance BaggageAllowanceID="BA5ACCE833">
+				<BaggageAllowance BaggageAllowanceID="BA65176B8A">
 					<BaggageCategory>Checked</BaggageCategory>
 					<AllowanceDescription Concept="Piece">
 						<ApplicableParty>Traveler</ApplicableParty>
@@ -538,7 +542,7 @@
 				</Disclosures>
 			</DisclosureList>
 			<FareList>
-				<FareGroup ListKey="FG1" refs="FRK8DA41FED">
+				<FareGroup ListKey="FG1" refs="FRKC950FC78">
 					<Fare>
 						<FareCode>70J</FareCode>
 					</Fare>
@@ -550,27 +554,27 @@
 			<FlightSegmentList>
 				<FlightSegment SegmentKey="S2" ElectronicTicketInd="true" SecureFlight="true">
 					<Departure>
-						<AirportCode>LAS</AirportCode>
-						<Date>2024-12-02</Date>
-						<Time>01:25</Time>
-						<AirportName>Las Vegas Harry Reid Intl, US</AirportName>
-						<Terminal>
-							<Name>3</Name>
-						</Terminal>
-					</Departure>
-					<Arrival>
 						<AirportCode>HNL</AirportCode>
-						<Date>2024-12-02</Date>
-						<Time>05:55</Time>
+						<Date>2025-01-01</Date>
+						<Time>15:00</Time>
 						<AirportName>Honolulu, US</AirportName>
 						<Terminal>
 							<Name>1</Name>
+						</Terminal>
+					</Departure>
+					<Arrival>
+						<AirportCode>PHX</AirportCode>
+						<Date>2025-01-01</Date>
+						<Time>23:45</Time>
+						<AirportName>Phoenix Sky Harbor Intl Apt, US</AirportName>
+						<Terminal>
+							<Name>3</Name>
 						</Terminal>
 					</Arrival>
 					<MarketingCarrier>
 						<AirlineID>HA</AirlineID>
 						<Name>Hawaiian Airlines</Name>
-						<FlightNumber>17</FlightNumber>
+						<FlightNumber>36</FlightNumber>
 					</MarketingCarrier>
 					<Equipment>
 						<AircraftCode>332</AircraftCode>
@@ -581,31 +585,31 @@
 					</ClassOfService>
 					<FlightDetail>
 						<FlightDistance>
-							<Value>2761</Value>
+							<Value>2914</Value>
 							<UOM>Miles</UOM>
 						</FlightDistance>
 						<FlightDuration>
-							<Value>PT6H30M</Value>
+							<Value>PT5H55M</Value>
 						</FlightDuration>
 						<Stops>
 							<StopQuantity>0</StopQuantity>
 						</Stops>
 						<ResDateTime>
-							<Date time="13:55">2024-11-28</Date>
+							<Date time="11:21">2024-12-06</Date>
 						</ResDateTime>
 					</FlightDetail>
 				</FlightSegment>
 			</FlightSegmentList>
 			<FlightList>
 				<Flight FlightKey="F1">
-					<SegmentReferences OnPoint="LAS" OffPoint="HNL">S2</SegmentReferences>
+					<SegmentReferences OnPoint="HNL" OffPoint="PHX">S2</SegmentReferences>
 				</Flight>
 			</FlightList>
 			<OriginDestinationList>
 				<OriginDestination OriginDestinationKey="O1">
-					<DepartureCode>LAS</DepartureCode>
-					<ArrivalCode>HNL</ArrivalCode>
-					<FlightReferences OnPoint="LAS" OffPoint="HNL">F1</FlightReferences>
+					<DepartureCode>HNL</DepartureCode>
+					<ArrivalCode>PHX</ArrivalCode>
+					<FlightReferences OnPoint="HNL" OffPoint="PHX">F1</FlightReferences>
 				</OriginDestination>
 			</OriginDestinationList>
 			<PriceClassList>
@@ -653,18 +657,18 @@
 				</PriceClass>
 			</PriceClassList>
 			<ServiceDefinitionList>
-				<ServiceDefinition ServiceDefinitionID="BASRV7587DC3D-CO">
+				<ServiceDefinition ServiceDefinitionID="BASRV1A740D55-CO">
 					<Name>Carry On Bag Allowance</Name>
-					<BaggageAllowanceRef>BAB958E797-CO</BaggageAllowanceRef>
+					<BaggageAllowanceRef>BA64F2F2B5-CO</BaggageAllowanceRef>
 					<Descriptions>
 						<Description>
 							<Text>Carry On Bag Allowance</Text>
 						</Description>
 					</Descriptions>
 				</ServiceDefinition>
-				<ServiceDefinition ServiceDefinitionID="BASRV7B870F23">
+				<ServiceDefinition ServiceDefinitionID="BASRV137BCB04">
 					<Name>Checked Bag Allowance</Name>
-					<BaggageAllowanceRef>BA5ACCE833</BaggageAllowanceRef>
+					<BaggageAllowanceRef>BA65176B8A</BaggageAllowanceRef>
 					<Descriptions>
 						<Description>
 							<Text>Checked Bag Allowance</Text>
@@ -724,7 +728,7 @@
 							<SegmentIDRef>S2</SegmentIDRef>
 							<AirlineCode>HA</AirlineCode>
 							<SSRCode>TKNE</SSRCode>
-							<Text>1735755893100C1</Text>
+							<Text>1735756118239C1</Text>
 							<ActionCode>HK</ActionCode>
 						</SpecialServiceRequest>
 					</AugPoint>
@@ -740,10 +744,10 @@
 				</OtherMetadata>
 				<OtherMetadata>
 					<PaymentFormMetadatas>
-						<PaymentFormMetadata MetadataKey="PFMC816F711">
+						<PaymentFormMetadata MetadataKey="PFM51A55D7">
 							<AugmentationPoint>
 								<AugPoint>
-									<CCApprovalCode Amount="71820" CurrencyCode="USD" xmlns="http://ndc.farelogix.com/aug">917384</CCApprovalCode>
+									<CCApprovalCode Amount="70820" CurrencyCode="USD" xmlns="http://ndc.farelogix.com/aug">065965</CCApprovalCode>
 								</AugPoint>
 							</AugmentationPoint>
 						</PaymentFormMetadata>
@@ -751,18 +755,18 @@
 				</OtherMetadata>
 				<OtherMetadata>
 					<PriceMetadatas>
-						<PriceMetadata MetadataKey="FRK8DA41FED">
+						<PriceMetadata MetadataKey="FRKC950FC78">
 							<AugmentationPoint>
 								<AugPoint>
-									<FareRefKey xmlns="http://ndc.farelogix.com/aug">NO8EJWN~MVB8ODO~MNR9G~MpB8G?~MpN8GLK~MqB9J@Q~MDB8AFW.NBAL~MAW80.4.~MMB84.70~MBB86243~MRO8OSAJ~MPM8M@/.~MPN85~MQ/9CNS~MMQ80~MOV9?CR~MPA873~MBS800553~MSK907/~MAA877~MDC8N@~M?L856421~MBS9SRB~MQD860~MBV876~MPS8//0~MER91/~MQP978~MAP9S~MNQ8T~MCP9@~MDQ80*sShWqoRFeijI*flxKey</FareRefKey>
+									<FareRefKey xmlns="http://ndc.farelogix.com/aug">NO8EJWN~MVB8ODO~MNR9G~MpB8G?~MpN8GLK~MqB9NGV~MDB8AFW.NBAL~MAW80.4.~MMB84.70~MBB80.225~MSN9NT@K~MQL9LA./~MQM94~MP08DMT~MNP9/~MNW8@BS~MQ@964~MCR9/1621~MRL8263.~MAA877~MDC8N@~M?L855431~MBS9SRB~MQD860~MBV876~MPS8//0~MER91/~MQP978~MAP9S~MNQ8T~MCP9@~MDQ80*sq39BfxC3zus*flxKey</FareRefKey>
 								</AugPoint>
 							</AugmentationPoint>
 						</PriceMetadata>
-						<PriceMetadata MetadataKey="FCALC8C5461B">
+						<PriceMetadata MetadataKey="FCALC9D66D01F">
 							<AugmentationPoint>
 								<AugPoint>
 									<FareCalculationInfo xmlns="http://ndc.farelogix.com/aug">
-										<AddInfoText>LAS HA HNL685.42BHX0ODBN USD685.42END</AddInfoText>
+										<AddInfoText>HNL HA PHX675.52BHX0ODBN USD675.52END</AddInfoText>
 									</FareCalculationInfo>
 								</AugPoint>
 							</AugmentationPoint>
@@ -771,7 +775,7 @@
 				</OtherMetadata>
 				<OtherMetadata>
 					<RuleMetadatas>
-						<RuleMetadata MetadataKey="RM71465D36">
+						<RuleMetadata MetadataKey="RM31AEA9D0">
 							<RuleID>Change</RuleID>
 							<Values>
 								<Value>
@@ -779,7 +783,7 @@
 								</Value>
 							</Values>
 						</RuleMetadata>
-						<RuleMetadata MetadataKey="RM98130DA4">
+						<RuleMetadata MetadataKey="RME0004BBB">
 							<RuleID>Cancel</RuleID>
 							<Values>
 								<Value>

@@ -1,0 +1,32 @@
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/">
+    <SOAP-ENV:Header>
+         <t:TransactionControl>
+               <tc>
+                <iden u="Farelogix" p="TEMP02" pseudocity={pseudocity} agt="NGAYAKE" agtpwd={agtpwd}
+                      agy={agy}/>
+                <trace>haxmluser</trace>
+                <script engine="FLXDM" name="haa-dispatch.flxdm"/>
+            </tc>
+        </t:TransactionControl>
+    </SOAP-ENV:Header>
+    <SOAP-ENV:Body>
+        <ns1:XXTransaction xmlns:ns1="xxs">
+            <REQ>
+                <OrderCancelRQ Version="17.2" TransactionIdentifier="42538aeb-4580-428f-9">
+                    <Document id="document"/>
+                    <Party>
+                        <Sender>
+                            <TravelAgencySender>
+                                <PseudoCity>{pseudocity}</PseudoCity>
+                                <AgencyID>{agy}</AgencyID>
+                            </TravelAgencySender>
+                        </Sender>
+                    </Party>
+                    <Query>
+                        <Order Owner="HAA" OrderID="{order_id}"/>
+                    </Query>
+                </OrderCancelRQ>
+            </REQ>
+        </ns1:XXTransaction>
+    </SOAP-ENV:Body>
+</SOAP-ENV:Envelope>
